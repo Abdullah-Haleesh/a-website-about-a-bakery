@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: orange;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        #hero img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 8px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: orange;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Bakery</h1>
+        <nav>
+            <ul>
+                <li><a href="offerings.html">Our Offerings</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero">
+        <img src="images/baker.jpg" alt="Baker">
+        <img src="images/baker2.jpg" alt="Baker 2">
+        <img src="images/baker3.jpg" alt="Baker 3">
+    </section>
+    
+    <section id="offerings">
+        <h2>Our Offerings</h2>
+        <p>Explore our delicious range of baked goods, from fresh bread to pastries and cakes.</p>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a family-owned bakery dedicated to providing the best baked goods made from high-quality ingredients.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries, please reach out to us at <a href="mailto:info@bakery.com">info@bakery.com</a>.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Bakery. All rights reserved.</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

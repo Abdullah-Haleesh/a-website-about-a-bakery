@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Offerings - Bakery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: orange;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #offerings ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+            justify-content: center;
+        }
+        #offerings li {
+            flex: 1 1 calc(25% - 20px);
+            margin: 10px;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #offerings img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        #offerings p {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        footer {
+            background-color: orange;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Offerings</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="offerings">
+            <h2>Bakery Items</h2>
+            <ul>
+                <li>
+                    <img src="images/bread.jpg" alt="Bread">
+                    <p>Bread</p>
+                </li>
+                <li>
+                    <img src="images/croissants.jpg" alt="Croissants">
+                    <p>Croissants</p>
+                </li>
+                <li>
+                    <img src="images/muffins.jpg" alt="Muffins">
+                    <p>Muffins</p>
+                </li>
+                <li>
+                    <img src="images/cakes.jpg" alt="Cakes">
+                    <p>Cakes</p>
+                </li>
+                <li>
+                    <img src="images/cookies.jpg" alt="Cookies">
+                    <p>Cookies</p>
+                </li>
+                <li>
+                    <img src="images/pastries.jpg" alt="Pastries">
+                    <p>Pastries</p>
+                </li>
+                <li>
+                    <img src="images/donuts.jpg" alt="Donuts">
+                    <p>Donuts</p>
+                </li>
+                <li>
+                    <img src="images/pies.jpg" alt="Pies">
+                    <p>Pies</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bakery. All rights reserved.</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
