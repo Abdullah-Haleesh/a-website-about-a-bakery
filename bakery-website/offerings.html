@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Offerings - Bakery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+            animation: fadeIn 0.5s, fadeOut 0.5s 1.5s;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+        #cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        #cart:hover {
+            transform: scale(1.05);
+        }
+
+        #cart-count {
+            display: inline-block;
+            background: white;
+            color: #ff6b6b;
+            padding: 2px 8px;
+            border-radius: 50%;
+            margin-left: 5px;
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .quantity-input {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .quantity-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .quantity-btn:hover {
+            background: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Offerings</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div id="cart" style="cursor: pointer;">
+            🛒 Cart <span id="cart-count">0</span>
+        </div>
+    </header>
+    <main>
+        <section id="offerings">
+            <h2>Bakery Items</h2>
+            <ul>
+                <li>
+                    <img src="images/bread.jpg" alt="Bread">
+                    <p>Bread</p>
+                    <p class="price">$3.99</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity('Bread')">-</button>
+                        <input type="number" min="1" value="1" class="quantity-input" data-product="Bread">
+                        <button class="quantity-btn" onclick="incrementQuantity('Bread')">+</button>
+                    </div>
+                    <button onclick="addToCart('Bread', 3.99)">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="images/croissants.jpg" alt="Croissants">
+                    <p>Croissants</p>
+                    <p class="price">$2.49</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity('Croissants')">-</button>
+                        <input type="number" min="1" value="1" class="quantity-input" data-product="Croissants">
+                        <button class="quantity-btn" onclick="incrementQuantity('Croissants')">+</button>
+                    </div>
+                    <button onclick="addToCart('Croissants', 2.49)">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="images/muffins.jpg" alt="Muffins">
+                    <p>Muffins</p>
+                    <p class="price">$2.99</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity('Muffins')">-</button>
+                        <input type="number" min="1" value="1" class="quantity-input" data-product="Muffins">
+                        <button class="quantity-btn" onclick="incrementQuantity('Muffins')">+</button>
+                    </div>
+                    <button onclick="addToCart('Muffins', 2.99)">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="images/cakes.jpg" alt="Cakes">
+                    <p>Cakes</p>
+                    <p class="price">$24.99</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity('Cakes')">-</button>
+                        <input type="number" min="1" value="1" class="quantity-input" data-product="Cakes">
+                        <button class="quantity-btn" onclick="incrementQuantity('Cakes')">+</button>
+                    </div>
+                    <button onclick="addToCart('Cakes', 24.99)">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="images/cookies.jpg" alt="Cookies">
+                    <p>Cookies</p>
+                    <p class="price">$1.99</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity('Cookies')">-</button>
+                        <input type="number" min="1" value="1" class="quantity-input" data-product="Cookies">
+                        <button class="quantity-btn" onclick="incrementQuantity('Cookies')">+</button>
+                    </div>
+                    <button onclick="addToCart('Cookies', 1.99)">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="images/pastries.jpg" alt="Pastries">
+                    <p>Pastries</p>
+                    <p class="price">$3.49</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity('Pastries')">-</button>
+                        <input type="number" min="1" value="1" class="quantity-input" data-product="Pastries">
+                        <button class="quantity-btn" onclick="incrementQuantity('Pastries')">+</button>
+                    </div>
+                    <button onclick="addToCart('Pastries', 3.49)">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="images/donuts.jpg" alt="Donuts">
+                    <p>Donuts</p>
+                    <p class="price">$1.49</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity('Donuts')">-</button>
+                        <input type="number" min="1" value="1" class="quantity-input" data-product="Donuts">
+                        <button class="quantity-btn" onclick="incrementQuantity('Donuts')">+</button>
+                    </div>
+                    <button onclick="addToCart('Donuts', 1.49)">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="images/pies.jpg" alt="Pies">
+                    <p>Pies</p>
+                    <p class="price">$18.99</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decrementQuantity('Pies')">-</button>
+                        <input type="number" min="1" value="1" class="quantity-input" data-product="Pies">
+                        <button class="quantity-btn" onclick="incrementQuantity('Pies')">+</button>
+                    </div>
+                    <button onclick="addToCart('Pies', 18.99)">Add to Cart</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bakery. All rights reserved.</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
